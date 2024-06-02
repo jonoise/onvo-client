@@ -10,7 +10,7 @@ import { ResourceBase } from './base'
 
 export class Subscriptions extends ResourceBase {
   /**
-   * List all subscriptions: https://docs.onvopay.com/#tag/Suscripciones/paths/~1v1~1subscriptions/get
+   * List all subscriptions: https://docs.onvopay.com/#tag/Cargos-recurrentes/paths/~1v1~1subscriptions/get
    * @param queryParams - Query parameters
    * @returns Promise<Subscription[]>
    */
@@ -26,7 +26,7 @@ export class Subscriptions extends ResourceBase {
   }
 
   /**
-   * Create a new subscription: https://docs.onvopay.com/#tag/Suscripciones/paths/~1v1~1subscriptions/post
+   * Create a new subscription: https://docs.onvopay.com/#tag/Cargos-recurrentes/paths/~1v1~1subscriptions/post
    * @param data - Subscription data
    * @returns Promise<OnvoSubscriptionI>
    */
@@ -43,7 +43,7 @@ export class Subscriptions extends ResourceBase {
   }
 
   /**
-   * Get a subscription by ID: https://docs.onvopay.com/#tag/Suscripciones/paths/~1v1~1subscriptions~1{id}/get
+   * Get a subscription by ID: https://docs.onvopay.com/#tag/Cargos-recurrentes/paths/~1v1~1subscriptions~1%7Bid%7D/get
    * @param id - Subscription ID
    * @returns Promise<OnvoSubscriptionI>
    */
@@ -53,7 +53,7 @@ export class Subscriptions extends ResourceBase {
   }
 
   /**
-   * Update a subscription: https://docs.onvopay.com/#tag/Suscripciones/paths/~1v1~1subscriptions~1{id}/put
+   * Update a subscription: https://docs.onvopay.com/#tag/Cargos-recurrentes/paths/~1v1~1subscriptions~1%7Bid%7D/post
    * @param id - Subscription ID
    * @param data - Subscription data
    * @returns Promise<OnvoSubscriptionI>
@@ -71,7 +71,7 @@ export class Subscriptions extends ResourceBase {
   }
 
   /**
-   * Cancel a subscription: https://docs.onvopay.com/#tag/Suscripciones/paths/~1v1~1subscriptions~1{id}~1cancel/post
+   * Cancel a subscription: https://docs.onvopay.com/#tag/Cargos-recurrentes/paths/~1v1~1subscriptions~1%7Bid%7D/delete
    * @param id - Subscription ID
    * @returns Promise<OnvoSubscriptionI>
    */
@@ -81,7 +81,7 @@ export class Subscriptions extends ResourceBase {
   }
 
   /**
-   * Confirm a subscription: https://docs.onvopay.com/#tag/Suscripciones/paths/~1v1~1subscriptions~1{id}~1confirm/post
+   * Confirm a subscription: https://docs.onvopay.com/#tag/Cargos-recurrentes/paths/~1v1~1subscriptions~1%7Bid%7D~1confirm/post
    * @param id - Subscription ID
    * @param data - Subscription data
    * @returns Promise<OnvoSubscriptionI>
@@ -100,7 +100,7 @@ export class Subscriptions extends ResourceBase {
   }
 
   /**
-   * Add item to a subscription: https://docs.onvopay.com/#tag/Suscripciones/paths/~1v1~1subscriptions~1{id}~1add-item/post
+   * Add item to a subscription: https://docs.onvopay.com/#tag/Cargos-recurrentes/paths/~1v1~1subscriptions~1%7Bid%7D~1items/post
    * @param subscriptionId - Subscription ID
    * @param itemId - Item ID
    * @param data - Subscription data
@@ -124,7 +124,7 @@ export class Subscriptions extends ResourceBase {
   }
 
   /**
-   * Update item in a subscription: https://docs.onvopay.com/#tag/Suscripciones/paths/~1v1~1subscriptions~1{id}~1items~1{itemId}/put
+   * Update item in a subscription: https://docs.onvopay.com/#tag/Cargos-recurrentes/paths/~1v1~1subscriptions~1%7Bid%7D~1items~1%7Bitem%7D/patch
    * @param subscriptionId - Subscription ID
    * @param itemId - Item ID
    * @param data - Subscription data
@@ -141,14 +141,14 @@ export class Subscriptions extends ResourceBase {
       `/subscriptions/${subscriptionId}/items/${itemId}`
     )
     return this.request<OnvoSubscriptionItemI>(url, {
-      method: 'POST',
+      method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     })
   }
 
   /**
-   * Remove item from a subscription: https://docs.onvopay.com/#tag/Suscripciones/paths/~1v1~1subscriptions~1{id}~1items~1{itemId}/delete
+   * Remove item from a subscription: https://docs.onvopay.com/#tag/Cargos-recurrentes/paths/~1v1~1subscriptions~1%7Bid%7D~1items~1%7BitemId%7D/delete
    * @param subscriptionId - Subscription ID
    * @param itemId - Item ID
    * @returns Promise<OnvoSubscriptionI>

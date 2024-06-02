@@ -18,7 +18,7 @@ export class Refunds extends ResourceBase {
   }
 
   /**
-   * Get a refund by ID: https://docs.onvopay.com/#tag/Reembolsos/paths/~1v1~1refunds~1{id}/get
+   * Get a refund by ID: https://docs.onvopay.com/#tag/Reembolsos/paths/~1v1~1refunds~1%7Bid%7D/get
    * @param id - Refund ID
    * @returns Promise<OnvoRefundI>
    */
