@@ -3,6 +3,11 @@ import {
   PaymentIntents,
   PaymentMethods,
   Refunds,
+  Checkouts,
+  Prices,
+  Products,
+  ShippingRates,
+  Subscriptions,
 } from './resources/index'
 
 export class OnvoClient {
@@ -12,6 +17,11 @@ export class OnvoClient {
   public paymentMethods: PaymentMethods
   public paymentIntents: PaymentIntents
   public refunds: Refunds
+  public checkouts: Checkouts
+  public prices: Prices
+  public products: Products
+  public shippingRates: ShippingRates
+  public subscriptions: Subscriptions
 
   constructor(options: { api_key: string }) {
     if (!options.api_key) throw new Error('API Key is required')
@@ -21,6 +31,11 @@ export class OnvoClient {
     this.paymentMethods = new PaymentMethods(this)
     this.paymentIntents = new PaymentIntents(this)
     this.refunds = new Refunds(this)
+    this.checkouts = new Checkouts(this)
+    this.prices = new Prices(this)
+    this.products = new Products(this)
+    this.shippingRates = new ShippingRates(this)
+    this.subscriptions = new Subscriptions(this)
   }
 
   async request<T>(url: string, config: RequestInit): Promise<T> {
@@ -32,8 +47,9 @@ export class OnvoClient {
     const response = await fetch(url, { ...config, headers })
 
     if (!response.ok) {
-      console.log('response', await response.json())
-      throw new Error(`HTTP error ${response.status}`)
+      const error = await response.json()
+
+      throw new Error(error?.message || error?.error || 'An error occurred')
     }
 
     const data = await response.json()

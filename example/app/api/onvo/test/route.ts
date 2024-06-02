@@ -2,7 +2,13 @@ import { onvo } from '@/lib/onvo'
 
 export const GET = async (req: Request) => {
   try {
-    const c = await onvo.paymentMethods.verify('clwxcjjvf2n1taa4yvp9dp6ks')
+    const c = await onvo.prices.create({
+      currency: 'USD',
+      isActive: true,
+      productId: 'clwxgl8nx2mdzmhq3ciy8f876',
+      type: 'one_time',
+      unitAmount: 1000,
+    })
     return Response.json({ c })
   } catch (error) {
     console.log('error', error)
