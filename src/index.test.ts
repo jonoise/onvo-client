@@ -1,7 +1,6 @@
 import { OnvoClient } from './client'
 
-const TEST_API_KEY = process.env['TEST_API_KEY']
-const client = new OnvoClient({ api_key: TEST_API_KEY! })
+const client = new OnvoClient({ api_key: 'test-api'! })
 
 test('API Should be present to initialize', () => {
   expect(() => new OnvoClient({ api_key: '' })).toThrow('API Key is required')
