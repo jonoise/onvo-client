@@ -18,16 +18,38 @@ yarn add onvo-client
 
 ### Usage
 
+La librería está diseñada para ser usada en un entorno de servidor, no incluya esta librería en el frontend de su aplicación ya que expondría su clave secreta.
+La clave secreta deber ser guardada en una variable de entorno.
+
+#### Create client and export it
+
+@lib/onvo.ts
+
 ```typescript
-// @lib/onvo.ts
 import { OnvoClient } from 'onvo-client'
 
 export const onvo = new OnvoClient({ api_key: 'YOUR_SECRET_KEY' })
+```
 
-// @my-api-endpoint.ts
-import { onvo } from '@lib/onvo'
+#### Use the client in your endpoints
 
-const customers = await onvo.customers.list()
+@routes/onvo/customers.ts
+
+```typescript
+import { onvo } from '../lib/onvo'
+
+export const createCustomer = async (req, res) => {
+  try {
+    const customers = await onvo.customers.create({
+      name: 'Carlos Alvarado',
+      email: 'carlitos@presidencia.cr',
+    })
+
+    return customers
+  } catch (error) {
+    return error
+  }
+}
 ```
 
 ## Resources
