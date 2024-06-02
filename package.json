@@ -1,6 +1,6 @@
 {
   "name": "onvo-client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.cjs",
@@ -30,7 +30,5 @@
     "tsup": "^8.0.2",
     "typescript": "^5.4.5"
   },
-  "dependencies": {
-    "dotenv": "^16.4.5"
-  }
+  "dependencies": {}
 }
