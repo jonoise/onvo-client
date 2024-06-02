@@ -8,7 +8,7 @@ import { ResourceBase } from './base'
 
 export class PaymentMethods extends ResourceBase {
   /**
-   * List all payment methods: https://docs.onvopay.com/#tag/Metodos-de-Pago/paths/~1v1~1payment-methods/get
+   * List all payment methods: https://docs.onvopay.com/#tag/Metodos-de-pago/paths/~1v1~1payment-methods/get
    * @param queryParams - Query parameters
    * @returns Promise<PaymentMethod[]>
    */
@@ -24,7 +24,7 @@ export class PaymentMethods extends ResourceBase {
   }
 
   /**
-   * Create a new payment method: https://docs.onvopay.com/#tag/Metodos-de-Pago/paths/~1v1~1payment-methods/post
+   * Create a new payment method: https://docs.onvopay.com/#tag/Metodos-de-pago/paths/~1v1~1payment-methods/post
    * @param data - Payment method data
    * @returns Promise<OnvoPaymentMethodT>
    */
@@ -40,7 +40,7 @@ export class PaymentMethods extends ResourceBase {
   }
 
   /**
-   * Get a payment method by ID: https://docs.onvopay.com/#tag/Metodos-de-Pago/paths/~1v1~1payment-methods~1{id}/get
+   * Get a payment method by ID: https://docs.onvopay.com/#tag/Metodos-de-pago/paths/~1v1~1payment-methods~1%7Bid%7D~1detach/post
    * @param id - Payment method ID
    * @returns Promise<OnvoPaymentMethodT>
    */
@@ -50,7 +50,7 @@ export class PaymentMethods extends ResourceBase {
   }
 
   /**
-   * Get a payment method by ID: https://docs.onvopay.com/#tag/Metodos-de-Pago/paths/~1v1~1payment-methods~1{id}/get
+   * Get a payment method by ID: https://docs.onvopay.com/#tag/Metodos-de-pago/paths/~1v1~1payment-methods~1%7Bid%7D/get
    * @param id - Payment method ID
    * @returns Promise<OnvoPaymentMethodT>
    */
@@ -61,7 +61,7 @@ export class PaymentMethods extends ResourceBase {
   }
 
   /**
-   * Update a payment method by ID: https://docs.onvopay.com/#tag/Metodos-de-Pago/paths/~1v1~1payment-methods~1{id}/put
+   * Update a payment method by ID: https://docs.onvopay.com/#tag/Metodos-de-pago/paths/~1v1~1payment-methods~1%7Bid%7D/post
    * @param id - Payment method ID
    * @param data - Payment method data
    * @returns Promise<OnvoPaymentMethodT>
@@ -80,7 +80,7 @@ export class PaymentMethods extends ResourceBase {
   }
 
   /**
-   * Verify a payment method by ID: https://docs.onvopay.com/#tag/Metodos-de-Pago/paths/~1v1~1payment-methods~1{id}~1verify/post
+   * Verify a payment method by ID: https://docs.onvopay.com/#tag/Metodos-de-pago/paths/~1v1~1payment-methods~1%7Bid%7D~1verify/post
    * @param id - Payment method ID
    * @returns Promise<OnvoPaymentMethodT>
    */

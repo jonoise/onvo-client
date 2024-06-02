@@ -7,7 +7,7 @@ import { ResourceBase } from './base'
 
 export class Checkouts extends ResourceBase {
   /**
-   * Create a new checkout: https://docs.onvopay.com/#tag/Checkouts/paths/~1v1~1checkouts/post
+   * Create a new checkout: https://docs.onvopay.com/#tag/Sesiones-de-Checkout/paths/~1v1~1checkout~1sessions~1one-time-link/post
    * @param data - Checkout data
    * @returns Promise<OnvoCheckoutI>
    */
@@ -24,7 +24,7 @@ export class Checkouts extends ResourceBase {
   }
 
   /**
-   * Expire a checkout: https://docs.onvopay.com/#tag/Checkouts/paths/~1v1~1checkouts~1{id}~1expire/post
+   * Expire a checkout: https://docs.onvopay.com/#tag/Sesiones-de-Checkout/paths/~1v1~1checkout~1sessions~1%7Bid%7D~1expire/post
    * @param id - Checkout ID
    * @returns Promise<OnvoCheckoutI>
    */
@@ -38,7 +38,7 @@ export class Checkouts extends ResourceBase {
   }
 
   /**
-   * Get a checkout by ID: https://docs.onvopay.com/#tag/Checkouts/paths/~1v1~1checkouts~1{id}/get
+   * Get a checkout by ID: https://docs.onvopay.com/#tag/Sesiones-de-Checkout/paths/~1v1~1checkout~1sessions~1one-time-link~1account/get
    * @param id - Checkout ID
    * @returns Promise<OnvoCheckoutI>
    */

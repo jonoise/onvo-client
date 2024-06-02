@@ -33,7 +33,7 @@ export class Prices extends ResourceBase {
   }
 
   /**
-   * Get a price by ID: https://docs.onvopay.com/#tag/Precios/paths/~1v1~1prices~1{id}/get
+   * Get a price by ID: https://docs.onvopay.com/#tag/Precios/paths/~1v1~1prices~1%7Bid%7D/get
    * @param id - Price ID
    * @returns Promise<OnvoPriceI>
    */
@@ -43,7 +43,7 @@ export class Prices extends ResourceBase {
   }
 
   /**
-   * Update a price: https://docs.onvopay.com/#tag/Precios/paths/~1v1~1prices~1{id}/put
+   * Update a price: https://docs.onvopay.com/#tag/Precios/paths/~1v1~1prices~1%7Bid%7D/post
    * @param id - Price ID
    * @param data - Price data
    * @returns Promise<OnvoPriceI>
@@ -59,7 +59,7 @@ export class Prices extends ResourceBase {
   }
 
   /**
-   * Delete a price: https://docs.onvopay.com/#tag/Precios/paths/~1v1~1prices~1{id}/delete
+   * Delete a price: https://docs.onvopay.com/#tag/Precios/paths/~1v1~1prices~1%7Bid%7D/delete
    * @param id - Price ID
    * @returns Promise<OnvoPriceI>
    */

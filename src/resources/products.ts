@@ -35,7 +35,7 @@ export class Products extends ResourceBase {
   }
 
   /**
-   * Get a product by ID: https://docs.onvopay.com/#tag/Productos/paths/~1v1~1products~1{id}/get
+   * Get a product by ID: https://docs.onvopay.com/#tag/Productos/paths/~1v1~1products~1%7Bid%7D/get
    * @param id - Product ID
    * @returns Promise<OnvoProductI>
    */
@@ -46,7 +46,7 @@ export class Products extends ResourceBase {
   }
 
   /**
-   * Update a product: https://docs.onvopay.com/#tag/Productos/paths/~1v1~1products~1{id}/put
+   * Update a product: https://docs.onvopay.com/#tag/Productos/paths/~1v1~1products~1%7Bid%7D/post
    * @param id - Product ID
    * @param data - Product data
    * @returns Promise<OnvoProductI>
@@ -65,7 +65,7 @@ export class Products extends ResourceBase {
   }
 
   /**
-   * Delete a product: https://docs.onvopay.com/#tag/Productos/paths/~1v1~1products~1{id}/delete
+   * Delete a product: https://docs.onvopay.com/#tag/Productos/paths/~1v1~1products~1%7Bid%7D/delete
    * @param id - Product ID
    * @returns Promise<OnvoProductI>
    */

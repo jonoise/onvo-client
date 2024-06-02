@@ -8,7 +8,7 @@ import { ResourceBase } from './base'
 
 export class ShippingRates extends ResourceBase {
   /**
-   * List all shipping rates: https://docs.onvopay.com/#tag/Tarifas-de-Envio/paths/~1v1~1shipping-rates/get
+   * List all shipping rates: https://docs.onvopay.com/#tag/Tarifas-de-envio/paths/~1v1~1shipping-rates/get
    * @param queryParams - Query parameters
    * @returns Promise<ShippingRate[]>
    */
@@ -24,7 +24,7 @@ export class ShippingRates extends ResourceBase {
   }
 
   /**
-   * Create a new shipping rate: https://docs.onvopay.com/#tag/Tarifas-de-Envio/paths/~1v1~1shipping-rates/post
+   * Create a new shipping rate: https://docs.onvopay.com/#tag/Tarifas-de-envio/paths/~1v1~1shipping-rates/post
    * @param data - Shipping rate data
    * @returns Promise<OnvoShippingRateI>
    */
@@ -40,7 +40,7 @@ export class ShippingRates extends ResourceBase {
   }
 
   /**
-   * Get a shipping rate by ID: https://docs.onvopay.com/#tag/Tarifas-de-Envio/paths/~1v1~1shipping-rates~1{id}/get
+   * Get a shipping rate by ID: https://docs.onvopay.com/#tag/Tarifas-de-envio/paths/~1v1~1shipping-rates~1%7Bid%7D/get
    * @param id - Shipping rate ID
    * @returns Promise<OnvoShippingRateI>
    */
@@ -51,7 +51,7 @@ export class ShippingRates extends ResourceBase {
   }
 
   /**
-   * Update a shipping rate: https://docs.onvopay.com/#tag/Tarifas-de-Envio/paths/~1v1~1shipping-rates~1{id}/put
+   * Update a shipping rate: https://docs.onvopay.com/#tag/Tarifas-de-envio/paths/~1v1~1shipping-rates~1%7Bid%7D/post
    * @param id - Shipping rate ID
    * @param data - Shipping rate data
    * @returns Promise<OnvoShippingRateI>
@@ -70,7 +70,7 @@ export class ShippingRates extends ResourceBase {
   }
 
   /**
-   * Delete a shipping rate: https://docs.onvopay.com/#tag/Tarifas-de-Envio/paths/~1v1~1shipping-rates~1{id}/delete
+   * Delete a shipping rate: https://docs.onvopay.com/#tag/Tarifas-de-envio/paths/~1v1~1shipping-rates~1%7Bid%7D/delete
    * @param id - Shipping rate ID
    * @returns Promise<OnvoShippingRateI>
    */

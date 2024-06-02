@@ -8,7 +8,7 @@ import { ResourceBase } from './base'
 
 export class PaymentIntents extends ResourceBase {
   /**
-   * List all payment intents: https://docs.onvopay.com/#tag/Intenciones-de-Pago/paths/~1v1~1payment-intents/get
+   * List all payment intents: https://docs.onvopay.com/#tag/Intenciones-de-pago/paths/~1v1~1payment-intents~1account/get
    * @param queryParams - Query parameters
    * @returns Promise<PaymentIntent[]>
    */
@@ -24,7 +24,7 @@ export class PaymentIntents extends ResourceBase {
   }
 
   /**
-   * Create a new payment intent: https://docs.onvopay.com/#tag/Intenciones-de-Pago/paths/~1v1~1payment-intents/post
+   * Create a new payment intent: https://docs.onvopay.com/#tag/Intenciones-de-pago/paths/~1v1~1payment-intents/post
    * @param data - Payment intent data
    * @returns Promise<OnvoPaymentIntentI>
    */
@@ -41,7 +41,7 @@ export class PaymentIntents extends ResourceBase {
   }
 
   /**
-   * Get a payment intent by ID: https://docs.onvopay.com/#tag/Intenciones-de-Pago/paths/~1v1~1payment-intents~1{id}/get
+   * Get a payment intent by ID: https://docs.onvopay.com/#tag/Intenciones-de-pago/paths/~1v1~1payment-intents~1%7Bid%7D/get
    * @param id - Payment intent ID
    * @returns Promise<OnvoPaymentIntentI>
    */
@@ -51,7 +51,7 @@ export class PaymentIntents extends ResourceBase {
   }
 
   /**
-   * Update a payment intent: https://docs.onvopay.com/#tag/Intenciones-de-Pago/paths/~1v1~1payment-intents~1{id}/put
+   * Update a payment intent: https://docs.onvopay.com/#tag/Intenciones-de-pago/paths/~1v1~1payment-intents~1%7Bid%7D/post
    * @param id - Payment intent ID
    * @param data - Payment intent data
    * @returns Promise<OnvoPaymentIntentI>
@@ -70,7 +70,7 @@ export class PaymentIntents extends ResourceBase {
   }
 
   /**
-   * Confirm a payment intent: https://docs.onvopay.com/#tag/Intenciones-de-Pago/paths/~1v1~1payment-intents~1{id}~1confirm/post
+   * Confirm a payment intent: https://docs.onvopay.com/#tag/Intenciones-de-pago/paths/~1v1~1payment-intents~1%7Bid%7D~1confirm/post
    * @param id - Payment intent ID
    * @returns Promise<OnvoPaymentIntentI>
    */
@@ -88,7 +88,7 @@ export class PaymentIntents extends ResourceBase {
   }
 
   /**
-   * Capture a payment intent: https://docs.onvopay.com/#tag/Intenciones-de-Pago/paths/~1v1~1payment-intents~1{id}~1capture/post
+   * Capture a payment intent: https://docs.onvopay.com/#tag/Intenciones-de-pago/paths/~1v1~1payment-intents~1%7Bid%7D~1capture/post
    * @param id - Payment intent ID
    * @returns Promise<OnvoPaymentIntentI>
    */
@@ -106,7 +106,7 @@ export class PaymentIntents extends ResourceBase {
   }
 
   /**
-   * Cancel a payment intent: https://docs.onvopay.com/#tag/Intenciones-de-Pago/paths/~1v1~1payment-intents~1{id}~1cancel/post
+   * Cancel a payment intent: https://docs.onvopay.com/#tag/Intenciones-de-pago/paths/~1v1~1payment-intents~1%7Bid%7D~1cancel/post
    * @param id - Payment intent ID
    * @returns Promise<OnvoPaymentIntentI>
    */
