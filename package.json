@@ -1,12 +1,13 @@
 {
   "name": "onvo-client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.cjs",
   "scripts": {
-    "test": "node -r dotenv/config $(which jest)",
+    "test": "jest",
     "lint": "tsc",
+    "pre": "yarn lint && yarn test",
     "build": "tsup src/index.ts --dts --minify --format cjs,esm --out-dir dist",
     "publish-local": "rm -rf onvo-client-0.0.1.tgz && npm run build && npm pack"
   },
@@ -30,7 +31,5 @@
     "tsup": "^8.0.2",
     "typescript": "^5.4.5"
   },
-  "dependencies": {
-    "dotenv": "^16.4.5"
-  }
+  "dependencies": {}
 }

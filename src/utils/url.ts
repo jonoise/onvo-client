@@ -11,7 +11,5 @@ export const buildUrl = (
     })
   }
 
-  console.log('BUILD URL', url.toString())
-
   return url.toString()
 }
