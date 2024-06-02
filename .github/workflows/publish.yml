@@ -11,14 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: yarn/action-setup@v2
         with:
           version: 7
       - uses: actions/setup-node@v3
         with:
           node-version: '18.x'
 
-      - run: yarn install --frozen-lockfile
+      - run: yarn install
       - name: Create Release Pull Request or Publish
         id: changesets
         uses: changesets/action@v1
