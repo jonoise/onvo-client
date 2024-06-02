@@ -5,8 +5,9 @@
   "main": "dist/index.js",
   "module": "dist/index.cjs",
   "scripts": {
-    "test": "node -r dotenv/config $(which jest)",
+    "test": "jest",
     "lint": "tsc",
+    "pre": "yarn lint && yarn test",
     "build": "tsup src/index.ts --dts --minify --format cjs,esm --out-dir dist",
     "publish-local": "rm -rf onvo-client-0.0.1.tgz && npm run build && npm pack"
   },

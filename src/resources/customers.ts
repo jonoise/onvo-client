@@ -11,8 +11,6 @@ export class Customers extends ResourceBase {
   public async list(
     queryParams?: Record<string, string>
   ): Promise<OnvoCustomerT[]> {
-    console.log()
-
     const url = buildUrl(this.client.baseUrl, '/customers', queryParams)
     return this.request<OnvoCustomerT[]>(url, { method: 'GET' })
   }

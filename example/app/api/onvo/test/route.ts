@@ -11,7 +11,6 @@ export const GET = async (req: Request) => {
     })
     return Response.json({ c })
   } catch (error) {
-    console.log('error', error)
     return Response.json({ message: 'Error from Onvo!' }, { status: 500 })
   }
 }

@@ -26,7 +26,6 @@ test('Should create customer', async () => {
 
   expect(async () => {
     const customer = await client.customers.create(data)
-    console.log('customer', customer)
     expect(customer).toBeDefined()
   })
 })
