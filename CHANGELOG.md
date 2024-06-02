@@ -1,5 +1,11 @@
 # onvo-client
 
+## 0.0.6
+
+### Patch Changes
+
+- add return types to delete and get_payment_methods for customers resource and updated readme
+
 ## 0.0.5
 
 ### Patch Changes

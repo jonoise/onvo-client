@@ -1,6 +1,7 @@
 import { buildUrl } from '../utils/url'
 import { ResourceBase } from './base'
 import { OnvoCustomerT } from '../types/customer'
+import { OnvoPaymentMethodT } from '../types/payment-method'
 
 export class Customers extends ResourceBase {
   /**
@@ -60,23 +61,23 @@ export class Customers extends ResourceBase {
   /**
    * Delete a customer by ID: https://docs.onvopay.com/#tag/Clientes/paths/~1v1~1customers~1{id}/delete
    * @param id - Customer ID
-   * @returns Promise<void>
+   * @returns Promise<OnvoCustomerT>
    */
-  public async delete(id: string): Promise<void> {
+  public async delete(id: string): Promise<OnvoCustomerT> {
     const url = buildUrl(this.client.baseUrl, `/customers/${id}`)
-    await this.request<void>(url, { method: 'DELETE' })
+    return await this.request<OnvoCustomerT>(url, { method: 'DELETE' })
   }
 
   /**
    * Get customer payment methods: https://docs.onvopay.com/#tag/Clientes/paths/~1v1~1customers~1%7Bid%7D~1payment-methods/get
    * @param id - Customer ID
-   * @returns Promise<void>
+   * @returns Promise<OnvoPaymentMethodT[]>
    */
-  public async get_payment_methods(id: string): Promise<void> {
+  public async get_payment_methods(id: string): Promise<OnvoPaymentMethodT[]> {
     const url = buildUrl(
       this.client.baseUrl,
       `/customers/${id}/payment_methods`
     )
-    await this.request<void>(url, { method: 'GET' })
+    return await this.request<OnvoPaymentMethodT[]>(url, { method: 'GET' })
   }
 }
