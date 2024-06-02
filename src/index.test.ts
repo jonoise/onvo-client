@@ -1,19 +1,33 @@
 import { OnvoClient } from './client'
 
-const TEST_API_KEY = 'api_key'
+const TEST_API_KEY = process.env['TEST_API_KEY']
+const client = new OnvoClient({ api_key: TEST_API_KEY! })
 
-const client = new OnvoClient(TEST_API_KEY)
-
-test('Init Onvo', () => {
-  expect(() => new OnvoClient('')).toThrow('API Key is required')
+test('API Should be present to initialize', () => {
+  expect(() => new OnvoClient({ api_key: '' })).toThrow('API Key is required')
 })
 
-test('Should have required headers', () => {
-  const defaultHeaders = new Map<string, string>([
-    ['Content-Type', 'application/json'],
-    ['Accept', 'application/json'],
-    ['Authorization', `Bearer ${TEST_API_KEY}`],
-  ])
+test('Instance of OnvoClient should be created', () => {
+  expect(client).toBeInstanceOf(OnvoClient)
+})
 
-  expect(client['_headers']).toEqual(defaultHeaders)
+test('Instance of OnvoClient should have a customers property', () => {
+  expect(client.customers).toBeDefined()
+})
+
+test('Instance of OnvoClient should have a baseUrl property', () => {
+  expect(client.baseUrl).toBe('https://api.onvopay.com/v1')
+})
+
+test('Should create customer', async () => {
+  const data = {
+    email: 'amigo@gmail.com ',
+    name: 'amigo uno',
+  }
+
+  expect(async () => {
+    const customer = await client.customers.create(data)
+    console.log('customer', customer)
+    expect(customer).toBeDefined()
+  })
 })

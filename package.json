@@ -1,11 +1,12 @@
 {
   "name": "onvo-client",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "test": "jest",
-    "build": "tsc"
+    "test": "node -r dotenv/config $(which jest)",
+    "build": "tsup src/index.ts --dts --minify --format cjs,esm --out-dir dist",
+    "publish-local": "rm -rf onvo-client-0.0.1.tgz && npm run build && npm pack"
   },
   "keywords": [],
   "author": "Amilcar Munoz",
@@ -22,6 +23,11 @@
     "@types/jest": "^29.5.12",
     "jest": "^29.7.0",
     "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.2",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
   }
 }

@@ -1,24 +1,34 @@
-import { CustomerService } from './services/customers'
-/**
- *
- *
- * @param {string}  api_key - Onvo API key
- * @param {boolean} [shouldThrow=false] - Optionally throw an exception when nothing found
- *
- */
-export class OnvoClient {
-  //   private _url = `https://api.onvopay.com/v1`
-  private _headers = new Map<string, string>([
-    ['Content-Type', 'application/json'],
-    ['Accept', 'application/json'],
-  ])
+import { Customers } from './resources/customers'
+import { PaymentMethods } from './resources/payment-methods'
 
-  constructor(private api_key: string) {
-    if (!this.api_key) {
-      throw new Error('API Key is required')
-    }
-    this._headers.set('Authorization', `Bearer ${this.api_key}`)
+export class OnvoClient {
+  private api_key?: string
+  public baseUrl: string = 'https://api.onvopay.com/v1'
+  public customers: Customers
+  public paymentMethods: PaymentMethods
+
+  constructor(options: { api_key: string }) {
+    if (!options.api_key) throw new Error('API Key is required')
+    this.api_key = options.api_key
+
+    this.customers = new Customers(this)
+    this.paymentMethods = new PaymentMethods(this)
   }
 
-  public customers = new CustomerService()
+  async request<T>(url: string, config: RequestInit): Promise<T> {
+    const headers = new Headers(config.headers)
+    if (this.api_key) {
+      headers.append('Authorization', `Bearer ${this.api_key}`)
+    }
+
+    const response = await fetch(url, { ...config, headers })
+
+    if (!response.ok) {
+      console.log('response', await response.json())
+      throw new Error(`HTTP error ${response.status}`)
+    }
+
+    const data = await response.json()
+    return data as T
+  }
 }
