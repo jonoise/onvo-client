@@ -1,11 +1,17 @@
-import { Customers } from './resources/customers'
-import { PaymentMethods } from './resources/payment-methods'
+import {
+  Customers,
+  PaymentIntents,
+  PaymentMethods,
+  Refunds,
+} from './resources/index'
 
 export class OnvoClient {
   private api_key?: string
   public baseUrl: string = 'https://api.onvopay.com/v1'
   public customers: Customers
   public paymentMethods: PaymentMethods
+  public paymentIntents: PaymentIntents
+  public refunds: Refunds
 
   constructor(options: { api_key: string }) {
     if (!options.api_key) throw new Error('API Key is required')
@@ -13,6 +19,8 @@ export class OnvoClient {
 
     this.customers = new Customers(this)
     this.paymentMethods = new PaymentMethods(this)
+    this.paymentIntents = new PaymentIntents(this)
+    this.refunds = new Refunds(this)
   }
 
   async request<T>(url: string, config: RequestInit): Promise<T> {
