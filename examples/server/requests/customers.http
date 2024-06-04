@@ -1,0 +1,33 @@
+### Si están usando VISUAL STUDIO CODE pueden instalar la extensión "REST Client" 
+### para probar los endpoints desde este archivo. Dar click en "Send Request" en la
+### parte superior de cada request.
+
+GET http://localhost:4848/customers
+
+###
+
+POST http://localhost:4848/customers
+content-type: application/json
+
+{
+  "name": "Onvo Client Customer",
+  "email": "onvo-client@fetchcr.com"
+}
+
+# OJO 👀 el servidor se puede quejar si a la última key del objecto 
+# le dejamos una coma.
+#
+#
+# {
+#   "name": "John Doe",
+#   "email": "amigo@gmail.com",  <--- NO DEJAR COMA al último key del objeto
+# }
+#
+# Eso pasa porque el server espera JSON y el JSON es sin coma final.
+
+
+###
+
+GET http://localhost:4848/customers/:id
+
+# Reemplazar :id por el id del customer que queremos buscar

@@ -1,6 +1,6 @@
 {
   "name": "onvo-client",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Onvo Client es un cliente de HTTP orientado a objetos para Node.js escrito en Typescript para interactuar de forma fácil con la API de Onvo.",
   "homepage": "https://github.com/jonoise/onvo-client",
   "bugs": {
@@ -17,10 +17,11 @@
     "lint": "tsc",
     "pre": "yarn lint && yarn test",
     "build": "tsup src/index.ts --dts --minify --format cjs,esm --out-dir dist",
-    "publish-local": "rm -rf onvo-client-0.0.1.tgz && npm run build && npm pack"
+    "publish-local": "rm -rf onvo-client-$npm_package_version.tgz && npm run build && npm pack"
   },
   "keywords": [
     "onvo",
+    "onvopay",
     "pagos",
     "client",
     "api",
@@ -50,5 +51,7 @@
     "tsup": "^8.0.2",
     "typescript": "^5.4.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "onvo-client": "file:onvo-client-0.0.6.tgz"
+  }
 }

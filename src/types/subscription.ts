@@ -79,5 +79,5 @@ type InsertOnvoSubscriptionItemKeys =
   | 'currency'
   | 'quantity'
 
-export interface InserOnvoSubscriptionItemI
+export interface InsertOnvoSubscriptionItemI
   extends Pick<OnvoSubscriptionItemI, InsertOnvoSubscriptionItemKeys> {}

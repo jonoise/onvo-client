@@ -1,5 +1,16 @@
 # onvo-client
 
+## 0.1.0
+
+### Minor Changes
+
+- fix #9 and #12
+
+### Patch Changes
+
+- Updated dependencies
+  - onvo-client@0.1.0
+
 ## 0.0.6
 
 ### Patch Changes

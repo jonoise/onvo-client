@@ -1,4 +1,5 @@
 node_modules
 dist
 .env
-onvo-client-0.0.1.tgz
+*.tgz
+test-server

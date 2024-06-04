@@ -2,7 +2,7 @@ import {
   OnvoPaymentIntentI,
   InsertOnvoPaymentIntentI,
 } from '../types/payment-intents'
-import { OnvoPaginationParams } from '../types/pagination'
+import { OnvoPaginationParams, PaginatedResponse } from '../types/pagination'
 import { buildUrl } from '../utils/url'
 import { ResourceBase } from './base'
 
@@ -14,13 +14,15 @@ export class PaymentIntents extends ResourceBase {
    */
   public async list(
     queryParams?: OnvoPaginationParams
-  ): Promise<OnvoPaymentIntentI[]> {
+  ): Promise<PaginatedResponse<OnvoPaymentIntentI>> {
     const url = buildUrl(
       this.client.baseUrl,
       '/payment-intents/account',
       queryParams as Record<string, string>
     )
-    return this.request<OnvoPaymentIntentI[]>(url, { method: 'GET' })
+    return this.request<PaginatedResponse<OnvoPaymentIntentI>>(url, {
+      method: 'GET',
+    })
   }
 
   /**
