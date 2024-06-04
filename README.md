@@ -38,8 +38,7 @@ export const onvo = new OnvoClient({ api_key: 'YOUR_SECRET_KEY' })
 ```js
 import { onvo } from '../lib/onvo'
 
-export const getCustomer = async (req, res) => {
-  const { id } = req.params
+export const getCustomer = async (id) => {
   try {
     const customer = await onvo.customers.get(id)
     return customer
