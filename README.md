@@ -35,17 +35,13 @@ export const onvo = new OnvoClient({ api_key: 'YOUR_SECRET_KEY' })
 
 @routes/onvo/customers.ts
 
-```typescript
+```js
 import { onvo } from '../lib/onvo'
 
-export const createCustomer = async (req, res) => {
+export const getCustomer = async (id) => {
   try {
-    const customers = await onvo.customers.create({
-      name: 'Carlos Alvarado',
-      email: 'carlitos@presidencia.cr',
-    })
-
-    return customers
+    const customer = await onvo.customers.get(id)
+    return customer
   } catch (error) {
     return error
   }
