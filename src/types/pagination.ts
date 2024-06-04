@@ -7,3 +7,14 @@ export interface OnvoPaginationParams {
   limit?: number // Límite en la cantidad de objetos a retornar
   startingAfter?: string // Cursor para paginación, ID de un objeto existente
 }
+
+export interface PaginatedResponse<T> {
+  data: T[]
+  meta: {
+    total: number
+    limit: number
+    pages: number
+    cursorNext: string | null
+    cursorPrevious: string | null
+  }
+}

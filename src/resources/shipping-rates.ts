@@ -1,4 +1,4 @@
-import { OnvoPaginationParams } from '../types/pagination'
+import { OnvoPaginationParams, PaginatedResponse } from '../types/pagination'
 import {
   InsertOnvoShippingRateI,
   OnvoShippingRateI,
@@ -14,13 +14,15 @@ export class ShippingRates extends ResourceBase {
    */
   public async list(
     queryParams?: OnvoPaginationParams
-  ): Promise<OnvoShippingRateI[]> {
+  ): Promise<PaginatedResponse<OnvoShippingRateI>> {
     const url = buildUrl(
       this.client.baseUrl,
       '/shipping-rates',
       queryParams as Record<string, string>
     )
-    return this.request<OnvoShippingRateI[]>(url, { method: 'GET' })
+    return this.request<PaginatedResponse<OnvoShippingRateI>>(url, {
+      method: 'GET',
+    })
   }
 
   /**

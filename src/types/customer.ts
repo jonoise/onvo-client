@@ -6,7 +6,7 @@ export type OnvoShipping = {
   phone?: string
 }
 
-export type OnvoCustomerT = {
+export interface OnvoCustomerI {
   address?: OnvoAddressT
   description?: string
   email: string

@@ -1,8 +1,8 @@
 import {
-  InsertOnvoPaymentMethodT,
-  OnvoPaymentMethodT,
+  InsertOnvoPaymentMethodI,
+  OnvoPaymentMethodI,
 } from '../types/payment-method'
-import { OnvoPaginationParams } from '../types/pagination'
+import { OnvoPaginationParams, PaginatedResponse } from '../types/pagination'
 import { buildUrl } from '../utils/url'
 import { ResourceBase } from './base'
 
@@ -14,25 +14,27 @@ export class PaymentMethods extends ResourceBase {
    */
   public async list(
     queryParams?: OnvoPaginationParams
-  ): Promise<OnvoPaymentMethodT[]> {
+  ): Promise<PaginatedResponse<OnvoPaymentMethodI>> {
     const url = buildUrl(
       this.client.baseUrl,
       '/payment-methods',
       queryParams as Record<string, string>
     )
-    return this.request<OnvoPaymentMethodT[]>(url, { method: 'GET' })
+    return this.request<PaginatedResponse<OnvoPaymentMethodI>>(url, {
+      method: 'GET',
+    })
   }
 
   /**
    * Create a new payment method: https://docs.onvopay.com/#tag/Metodos-de-pago/paths/~1v1~1payment-methods/post
    * @param data - Payment method data
-   * @returns Promise<OnvoPaymentMethodT>
+   * @returns Promise<OnvoPaymentMethodI>
    */
   public async create(
-    data: InsertOnvoPaymentMethodT
-  ): Promise<OnvoPaymentMethodT> {
+    data: InsertOnvoPaymentMethodI
+  ): Promise<OnvoPaymentMethodI> {
     const url = buildUrl(this.client.baseUrl, '/payment-methods')
-    return this.request<OnvoPaymentMethodT>(url, {
+    return this.request<OnvoPaymentMethodI>(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -42,37 +44,37 @@ export class PaymentMethods extends ResourceBase {
   /**
    * Get a payment method by ID: https://docs.onvopay.com/#tag/Metodos-de-pago/paths/~1v1~1payment-methods~1%7Bid%7D~1detach/post
    * @param id - Payment method ID
-   * @returns Promise<OnvoPaymentMethodT>
+   * @returns Promise<OnvoPaymentMethodI>
    */
-  public async detach(id: string): Promise<OnvoPaymentMethodT> {
+  public async detach(id: string): Promise<OnvoPaymentMethodI> {
     const url = buildUrl(this.client.baseUrl, `/payment-methods/${id}/detach`)
-    return this.request<OnvoPaymentMethodT>(url, { method: 'POST' })
+    return this.request<OnvoPaymentMethodI>(url, { method: 'POST' })
   }
 
   /**
    * Get a payment method by ID: https://docs.onvopay.com/#tag/Metodos-de-pago/paths/~1v1~1payment-methods~1%7Bid%7D/get
    * @param id - Payment method ID
-   * @returns Promise<OnvoPaymentMethodT>
+   * @returns Promise<OnvoPaymentMethodI>
    */
 
-  public async get(id: string): Promise<OnvoPaymentMethodT> {
+  public async get(id: string): Promise<OnvoPaymentMethodI> {
     const url = buildUrl(this.client.baseUrl, `/payment-methods/${id}`)
-    return this.request<OnvoPaymentMethodT>(url, { method: 'GET' })
+    return this.request<OnvoPaymentMethodI>(url, { method: 'GET' })
   }
 
   /**
    * Update a payment method by ID: https://docs.onvopay.com/#tag/Metodos-de-pago/paths/~1v1~1payment-methods~1%7Bid%7D/post
    * @param id - Payment method ID
    * @param data - Payment method data
-   * @returns Promise<OnvoPaymentMethodT>
+   * @returns Promise<OnvoPaymentMethodI>
    */
 
   public async update(
     id: string,
     data: UpdateOnvoPaymentMethodI
-  ): Promise<OnvoPaymentMethodT> {
+  ): Promise<OnvoPaymentMethodI> {
     const url = buildUrl(this.client.baseUrl, `/payment-methods/${id}`)
-    return this.request<OnvoPaymentMethodT>(url, {
+    return this.request<OnvoPaymentMethodI>(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -82,15 +84,15 @@ export class PaymentMethods extends ResourceBase {
   /**
    * Verify a payment method by ID: https://docs.onvopay.com/#tag/Metodos-de-pago/paths/~1v1~1payment-methods~1%7Bid%7D~1verify/post
    * @param id - Payment method ID
-   * @returns Promise<OnvoPaymentMethodT>
+   * @returns Promise<OnvoPaymentMethodI>
    */
 
   public async verify(
     id: string,
     data: VerifyOnvoPaymentMethodI
-  ): Promise<OnvoPaymentMethodT> {
+  ): Promise<OnvoPaymentMethodI> {
     const url = buildUrl(this.client.baseUrl, `/payment-methods/${id}/verify`)
-    return this.request<OnvoPaymentMethodT>(url, {
+    return this.request<OnvoPaymentMethodI>(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -99,7 +101,7 @@ export class PaymentMethods extends ResourceBase {
 }
 
 interface UpdateOnvoPaymentMethodI
-  extends Pick<InsertOnvoPaymentMethodT, 'billing'> {}
+  extends Pick<InsertOnvoPaymentMethodI, 'billing'> {}
 
 interface VerifyOnvoPaymentMethodI {
   amount: number

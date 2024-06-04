@@ -1,5 +1,5 @@
 import { OnvoAddressT } from './address'
-import { OnvoCustomerT } from './customer'
+import { OnvoCustomerI } from './customer'
 
 type OnvoBillingT = {
   address: OnvoAddressT
@@ -54,14 +54,14 @@ type OnvoPaymentMethodStatusT =
   | 'detached'
   | 'suspended'
 
-export interface OnvoPaymentMethodT {
+export interface OnvoPaymentMethodI {
   id: string
   bankAccount?: OnvoBankAccountT
   billing?: OnvoBillingT
   card?: OnvoCardNewI
   createdAt: string // ISO 8601 date string
   customerId?: string
-  customer?: OnvoCustomerT
+  customer?: OnvoCustomerI
   consumerId?: string
   mobileNumber?: OnvoMobileNumberT
   mode: OnvoPaymentMethodModeT
@@ -71,8 +71,8 @@ export interface OnvoPaymentMethodT {
   updatedAt: string // ISO 8601 date string
 }
 
-export interface InsertOnvoPaymentMethodT
+export interface InsertOnvoPaymentMethodI
   extends Omit<
-    OnvoPaymentMethodT,
+    OnvoPaymentMethodI,
     'id' | 'createdAt' | 'updatedAt' | 'mode' | 'status'
   > {}

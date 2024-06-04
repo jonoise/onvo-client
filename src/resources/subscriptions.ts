@@ -1,6 +1,6 @@
-import { OnvoPaginationParams } from '../types/pagination'
+import { OnvoPaginationParams, PaginatedResponse } from '../types/pagination'
 import {
-  InserOnvoSubscriptionItemI,
+  InsertOnvoSubscriptionItemI,
   InsertOnvoSubscriptionI,
   OnvoSubscriptionI,
   OnvoSubscriptionItemI,
@@ -16,13 +16,15 @@ export class Subscriptions extends ResourceBase {
    */
   public async list(
     queryParams?: OnvoPaginationParams
-  ): Promise<OnvoSubscriptionI[]> {
+  ): Promise<PaginatedResponse<OnvoSubscriptionI>> {
     const url = buildUrl(
       this.client.baseUrl,
       '/subscriptions',
       queryParams as Record<string, string>
     )
-    return this.request<OnvoSubscriptionI[]>(url, { method: 'GET' })
+    return this.request<PaginatedResponse<OnvoSubscriptionI>>(url, {
+      method: 'GET',
+    })
   }
 
   /**
@@ -110,7 +112,7 @@ export class Subscriptions extends ResourceBase {
   public async addItem(
     subscriptionId: string,
     itemId: string,
-    data: InserOnvoSubscriptionItemI
+    data: InsertOnvoSubscriptionItemI
   ): Promise<OnvoSubscriptionItemI> {
     const url = buildUrl(
       this.client.baseUrl,
@@ -134,7 +136,7 @@ export class Subscriptions extends ResourceBase {
   public async updateItem(
     subscriptionId: string,
     itemId: string,
-    data: InserOnvoSubscriptionItemI
+    data: InsertOnvoSubscriptionItemI
   ): Promise<OnvoSubscriptionItemI> {
     const url = buildUrl(
       this.client.baseUrl,
