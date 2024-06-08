@@ -1,5 +1,11 @@
 # onvo-client
 
+## 0.0.8
+
+### Patch Changes
+
+- export types from payment methods
+
 ## 0.0.7
 
 ### Minor Changes

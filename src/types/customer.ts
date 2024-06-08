@@ -1,13 +1,13 @@
-import { OnvoAddressT } from './address'
+import { OnvoAddressI } from './address'
 
 export type OnvoShipping = {
-  address: OnvoAddressT
+  address: OnvoAddressI
   name: string
   phone?: string
 }
 
 export interface OnvoCustomerI {
-  address?: OnvoAddressT
+  address?: OnvoAddressI
   description?: string
   email: string
   name: string
