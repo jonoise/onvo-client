@@ -1,5 +1,11 @@
 # onvo-client
 
+## 0.0.11
+
+### Patch Changes
+
+- bump v
+
 ## 0.0.10
 
 ### Patch Changes
