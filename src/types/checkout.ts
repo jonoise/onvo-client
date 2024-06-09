@@ -38,10 +38,10 @@ interface OnvoCheckoutLineItemI {
 
 export interface InsertOnvoCheckoutLineItemI {
   quantity: number
-  priceId: string
-  unitAmount: number
+  priceId?: string
+  unitAmount?: number
   currency: string
-  description: string
+  description?: string
 }
 
 export interface InsertOnvoCheckoutSessionI {

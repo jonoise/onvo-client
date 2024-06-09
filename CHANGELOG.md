@@ -1,5 +1,11 @@
 # onvo-client
 
+## 0.0.10
+
+### Patch Changes
+
+- fix InsertOnvoCheckoutLineItemI partial keys
+
 ## 0.0.9
 
 ### Patch Changes
