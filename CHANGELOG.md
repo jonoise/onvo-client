@@ -1,5 +1,11 @@
 # onvo-client
 
+## 0.0.9
+
+### Patch Changes
+
+- add insert customer type
+
 ## 0.0.8
 
 ### Patch Changes
