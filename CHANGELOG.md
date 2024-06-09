@@ -1,5 +1,11 @@
 # onvo-client
 
+## 0.0.12
+
+### Patch Changes
+
+- b0a49f5: add update types
+
 ## 0.0.11
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "onvo-client",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Onvo Client es un cliente de HTTP orientado a objetos para Node.js escrito en Typescript para interactuar de forma fácil con la API de Onvo.",
   "homepage": "https://github.com/jonoise/onvo-client",
   "bugs": {

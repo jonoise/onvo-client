@@ -24,9 +24,9 @@ export class Customers extends ResourceBase {
    * @param data - Customer data
    * @returns Promise<Customer>
    */
-  public async create(data: InsertOnvoCustomerI): Promise<InsertOnvoCustomerI> {
+  public async create(data: InsertOnvoCustomerI): Promise<OnvoCustomerI> {
     const url = buildUrl(this.client.baseUrl, '/customers')
-    return this.request<InsertOnvoCustomerI>(url, {
+    return this.request<OnvoCustomerI>(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
