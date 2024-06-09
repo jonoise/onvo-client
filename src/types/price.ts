@@ -26,3 +26,5 @@ type InsertOnvoPriceKeys =
 
 export interface InsertOnvoPriceI
   extends Pick<OnvoPriceI, InsertOnvoPriceKeys> {}
+
+export type UpdateOnvoPriceI = Partial<InsertOnvoPriceI>

@@ -36,6 +36,8 @@ export interface InsertOnvoPaymentIntentI
     | 'metadata'
   > {}
 
+export type UpdateOnvoPaymentIntentI = Partial<InsertOnvoPaymentIntentI>
+
 export interface OnvoChargeI {
   id: string
   amount: number
