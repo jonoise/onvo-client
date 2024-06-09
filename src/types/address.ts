@@ -1,4 +1,4 @@
-export type OnvoAddressT = {
+export interface OnvoAddressI {
   city?: string
   country: string
   line1?: string

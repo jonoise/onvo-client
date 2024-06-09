@@ -1,5 +1,17 @@
 # onvo-client
 
+## 0.0.9
+
+### Patch Changes
+
+- add insert customer type
+
+## 0.0.8
+
+### Patch Changes
+
+- export types from payment methods
+
 ## 0.0.7
 
 ### Minor Changes

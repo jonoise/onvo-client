@@ -36,11 +36,19 @@ interface OnvoCheckoutLineItemI {
   description: string
 }
 
+export interface InsertOnvoCheckoutLineItemI {
+  quantity: number
+  priceId: string
+  unitAmount: number
+  currency: string
+  description: string
+}
+
 export interface InsertOnvoCheckoutSessionI {
   customerName?: string
   customerEmail?: string
   customerPhone?: string
   redirectUrl?: string
-  lineItems: OnvoCheckoutLineItemI[]
+  lineItems: InsertOnvoCheckoutLineItemI[]
   metadata?: any
 }

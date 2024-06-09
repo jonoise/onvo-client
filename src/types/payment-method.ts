@@ -1,13 +1,14 @@
-import { OnvoAddressT } from './address'
+import { OnvoAddressI } from './address'
 import { OnvoCustomerI } from './customer'
+import { OmitId } from './generics'
 
-type OnvoBillingT = {
-  address: OnvoAddressT
+interface OnvoBillingI {
+  address: OnvoAddressI
   name: string
   phone?: string
 }
 
-export interface OnvoCardSavedI {
+export interface OnvoCardI {
   id: string
   accountId: string
   mode: string
@@ -24,13 +25,15 @@ export interface OnvoCardSavedI {
   tokenId: string | null
 }
 
-export interface OnvoCardNewI
-  extends Pick<OnvoCardSavedI, 'expMonth' | 'expYear' | 'holderName'> {
+export interface InsertOnvoCardI
+  extends OmitId<Pick<OnvoCardI, 'expMonth' | 'expYear' | 'holderName'>> {
   number: string
   cvv: string
 }
 
-export type OnvoBankAccountT = {
+export type UpdateOnvoCardI = Partial<OmitId<InsertOnvoCardI>>
+
+export interface OnvoBankAccountI {
   currency: string
   entity: string
   maskedIban: string
@@ -56,9 +59,9 @@ type OnvoPaymentMethodStatusT =
 
 export interface OnvoPaymentMethodI {
   id: string
-  bankAccount?: OnvoBankAccountT
-  billing?: OnvoBillingT
-  card?: OnvoCardNewI
+  bankAccount?: OnvoBankAccountI
+  billing?: OnvoBillingI
+  card?: InsertOnvoCardI
   createdAt: string // ISO 8601 date string
   customerId?: string
   customer?: OnvoCustomerI
@@ -76,3 +79,5 @@ export interface InsertOnvoPaymentMethodI
     OnvoPaymentMethodI,
     'id' | 'createdAt' | 'updatedAt' | 'mode' | 'status'
   > {}
+
+export type UpdateOnvoPaymentMethodI = Partial<OmitId<InsertOnvoPaymentMethodI>>

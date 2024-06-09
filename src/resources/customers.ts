@@ -1,6 +1,6 @@
 import { buildUrl } from '../utils/url'
 import { ResourceBase } from './base'
-import { OnvoCustomerI } from '../types/customer'
+import { InsertOnvoCustomerI, OnvoCustomerI } from '../types/customer'
 import { OnvoPaymentMethodI } from '../types/payment-method'
 import { PaginatedResponse } from '../types/pagination'
 
@@ -24,9 +24,9 @@ export class Customers extends ResourceBase {
    * @param data - Customer data
    * @returns Promise<Customer>
    */
-  public async create(data: OnvoCustomerI): Promise<OnvoCustomerI> {
+  public async create(data: InsertOnvoCustomerI): Promise<InsertOnvoCustomerI> {
     const url = buildUrl(this.client.baseUrl, '/customers')
-    return this.request<OnvoCustomerI>(url, {
+    return this.request<InsertOnvoCustomerI>(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -51,10 +51,10 @@ export class Customers extends ResourceBase {
    */
   public async update(
     id: string,
-    data: Partial<OnvoCustomerI>
-  ): Promise<OnvoCustomerI> {
+    data: Partial<InsertOnvoCustomerI>
+  ): Promise<InsertOnvoCustomerI> {
     const url = buildUrl(this.client.baseUrl, `/customers/${id}`)
-    return this.request<OnvoCustomerI>(url, {
+    return this.request<InsertOnvoCustomerI>(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
