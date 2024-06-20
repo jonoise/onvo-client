@@ -78,8 +78,8 @@ export class Subscriptions extends ResourceBase {
    * @returns Promise<OnvoSubscriptionI>
    */
   public async cancel(id: string): Promise<OnvoSubscriptionI> {
-    const url = buildUrl(this.client.baseUrl, `/subscriptions/${id}/cancel`)
-    return this.request<OnvoSubscriptionI>(url, { method: 'POST' })
+    const url = buildUrl(this.client.baseUrl, `/subscriptions/${id}`)
+    return this.request<OnvoSubscriptionI>(url, { method: 'DELETE' })
   }
 
   /**

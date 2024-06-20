@@ -1,5 +1,11 @@
 # onvo-client
 
+## 0.0.16
+
+### Patch Changes
+
+- fix: susbscription cancel method and endpoint fixed
+
 ## 0.0.15
 
 ### Patch Changes
