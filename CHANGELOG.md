@@ -1,5 +1,11 @@
 # onvo-client
 
+## 0.0.17
+
+### Patch Changes
+
+- added SubscriptionPaginationParams
+
 ## 0.0.16
 
 ### Patch Changes

@@ -1,4 +1,7 @@
-import { OnvoPaginationParams, PaginatedResponse } from '../types/pagination'
+import {
+  PaginatedResponse,
+  SubscriptionPaginationParams,
+} from '../types/pagination'
 import {
   InsertOnvoSubscriptionItemI,
   InsertOnvoSubscriptionI,
@@ -15,7 +18,7 @@ export class Subscriptions extends ResourceBase {
    * @returns Promise<Subscription[]>
    */
   public async list(
-    queryParams?: OnvoPaginationParams
+    queryParams?: SubscriptionPaginationParams
   ): Promise<PaginatedResponse<OnvoSubscriptionI>> {
     const url = buildUrl(
       this.client.baseUrl,

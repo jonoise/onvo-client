@@ -8,6 +8,11 @@ export interface OnvoPaginationParams {
   startingAfter?: string // Cursor para paginación, ID de un objeto existente
 }
 
+export interface SubscriptionPaginationParams extends OnvoPaginationParams {
+  status?: 'active' | 'canceled' | 'past_due' | 'trialing' | 'incomplete'
+  email?: string
+}
+
 export interface PaginatedResponse<T> {
   data: T[]
   meta: {
