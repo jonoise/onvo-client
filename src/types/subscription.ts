@@ -1,7 +1,7 @@
 export interface OnvoSubscriptionI {
   id: string
   billingCycleAnchor?: string | null
-  status:
+  status?:
     | 'active'
     | 'past_due'
     | 'canceled'
