@@ -9,15 +9,13 @@ export class Prices extends ResourceBase {
    * @param queryParams - Query parameters
    * @returns Promise<OnvoPrice[]>
    */
-  public async list(
-    queryParams?: OnvoPaginationParams
-  ): Promise<PaginatedResponse<OnvoPriceI>> {
+  public async list(queryParams?: OnvoPaginationParams): Promise<OnvoPriceI[]> {
     const url = buildUrl(
       this.client.baseUrl,
       '/prices',
       queryParams as Record<string, string>
     )
-    return this.request<PaginatedResponse<OnvoPriceI>>(url, { method: 'GET' })
+    return this.request<OnvoPriceI[]>(url, { method: 'GET' })
   }
 
   /**

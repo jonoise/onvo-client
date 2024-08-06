@@ -1,5 +1,11 @@
 # onvo-client
 
+## 0.0.19
+
+### Patch Changes
+
+- change prices return type of subscriptions.list method
+
 ## 0.0.18
 
 ### Patch Changes
