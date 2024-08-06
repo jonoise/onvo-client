@@ -1,5 +1,11 @@
 # onvo-client
 
+## 0.0.18
+
+### Patch Changes
+
+- add extra keys to InsertOnvoSubscriptionKeys
+
 ## 0.0.17
 
 ### Patch Changes

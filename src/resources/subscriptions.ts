@@ -114,12 +114,11 @@ export class Subscriptions extends ResourceBase {
 
   public async addItem(
     subscriptionId: string,
-    itemId: string,
     data: InsertOnvoSubscriptionItemI
   ): Promise<OnvoSubscriptionItemI> {
     const url = buildUrl(
       this.client.baseUrl,
-      `/subscriptions/${subscriptionId}/items/${itemId}`
+      `/subscriptions/${subscriptionId}/items`
     )
     return this.request<OnvoSubscriptionItemI>(url, {
       method: 'POST',

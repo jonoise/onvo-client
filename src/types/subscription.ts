@@ -59,6 +59,8 @@ type InsertOnvoSubscriptionKeys =
   | 'paymentMethodId'
   | 'items'
   | 'trialPeriodDays'
+  | 'currentPeriodStart'
+  | 'currentPeriodEnd'
 
 export interface InsertOnvoSubscriptionI
   extends Pick<OnvoSubscriptionI, InsertOnvoSubscriptionKeys> {}
