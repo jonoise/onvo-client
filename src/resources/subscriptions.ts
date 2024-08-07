@@ -65,7 +65,7 @@ export class Subscriptions extends ResourceBase {
    */
   public async update(
     id: string,
-    data: InsertOnvoSubscriptionI
+    data: Partial<InsertOnvoSubscriptionI>
   ): Promise<OnvoSubscriptionI> {
     const url = buildUrl(this.client.baseUrl, `/subscriptions/${id}`)
     return this.request<OnvoSubscriptionI>(url, {

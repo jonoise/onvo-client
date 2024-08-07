@@ -1,5 +1,11 @@
 # onvo-client
 
+## 0.0.20
+
+### Patch Changes
+
+- add partial to update subscription
+
 ## 0.0.19
 
 ### Patch Changes

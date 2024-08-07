@@ -1,4 +1,4 @@
-import { OnvoPaginationParams, PaginatedResponse } from '../types/pagination'
+import { OnvoPaginationParams } from '../types/pagination'
 import { InsertOnvoPriceI, OnvoPriceI } from '../types/price'
 import { buildUrl } from '../utils/url'
 import { ResourceBase } from './base'

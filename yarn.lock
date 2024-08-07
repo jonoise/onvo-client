@@ -3336,11 +3336,6 @@ onetime@^5.1.2:
   dependencies:
     mimic-fn "^2.1.0"
 
-"onvo-client@file:onvo-client-0.0.6.tgz":
-  version "0.0.6"
-  resolved "file:onvo-client-0.0.6.tgz"
-  integrity sha512-VH9+ylC6g+o/kPimWQmtCQTJCg+g0fTXhJzU9kAMgawBKcNlIzoLQXewlHLSJPPj46o/S1YSnnNpvASp2E1J3A==
-
 os-tmpdir@~1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/os-tmpdir/-/os-tmpdir-1.0.2.tgz"
