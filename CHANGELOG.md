@@ -1,5 +1,11 @@
 # onvo-client
 
+## 0.0.22
+
+### Patch Changes
+
+- fix typo on returnUrl property from payment-intents.confirm
+
 ## 0.1.0
 
 ### Minor Changes
