@@ -1,5 +1,11 @@
 # onvo-client
 
+## 0.1.0
+
+### Minor Changes
+
+- change error message when api key is missing
+
 ## 0.0.20
 
 ### Patch Changes

@@ -24,7 +24,7 @@ export class OnvoClient {
   public subscriptions: Subscriptions
 
   constructor(options: { api_key: string }) {
-    if (!options.api_key) throw new Error('API Key is required')
+    if (!options.api_key) throw new Error('Onvo API Key is required')
     this.api_key = options.api_key
 
     this.customers = new Customers(this)

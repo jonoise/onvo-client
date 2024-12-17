@@ -3,7 +3,9 @@ import { OnvoClient } from './client'
 const client = new OnvoClient({ api_key: 'test-api'! })
 
 test('API Should be present to initialize', () => {
-  expect(() => new OnvoClient({ api_key: '' })).toThrow('API Key is required')
+  expect(() => new OnvoClient({ api_key: '' })).toThrow(
+    'Onvo API Key is required'
+  )
 })
 
 test('Instance of OnvoClient should be created', () => {
