@@ -79,7 +79,7 @@ export class PaymentIntents extends ResourceBase {
 
   public async confirm(
     id: string,
-    body: { paymentMethodId: string; retunrUrl?: string }
+    body: { paymentMethodId: string; returnUrl?: string }
   ): Promise<OnvoPaymentIntentI> {
     const url = buildUrl(this.client.baseUrl, `/payment-intents/${id}/confirm`)
     return this.request<OnvoPaymentIntentI>(url, {
