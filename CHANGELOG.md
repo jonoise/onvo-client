@@ -1,5 +1,11 @@
 # onvo-client
 
+## 0.0.23
+
+### Patch Changes
+
+- fix: add onBehalfOf on InsertOnvoPaymentIntentI
+
 ## 0.0.22
 
 ### Patch Changes

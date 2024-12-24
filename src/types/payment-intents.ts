@@ -34,7 +34,9 @@ export interface InsertOnvoPaymentIntentI
     | 'customerId'
     | 'description'
     | 'metadata'
-  > {}
+  > {
+  onBehalfOf?: string
+}
 
 export type UpdateOnvoPaymentIntentI = Partial<InsertOnvoPaymentIntentI>
 
