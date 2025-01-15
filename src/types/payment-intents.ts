@@ -22,7 +22,29 @@ export interface OnvoPaymentIntentI {
     | 'canceled'
   updatedAt: string
   metadata?: object | null
+  balanceTransaction?: OnvoPaymentIntentBalanceTransactionI
   nextAction: OnvoNextActionI
+}
+
+export interface OnvoPaymentIntentBalanceTransactionI {
+  id: string
+  type: 'charge'
+  status: 'available'
+  currency: string
+  description: string
+  createdAt: string
+  amount: number
+  net: number
+  fee: number
+  vatTax: number
+  incomeTax: number
+  marketplaceAppFee: number
+  feeDetails: FeeDetail[] // Assuming feeDetails contains an array of objects
+}
+
+interface FeeDetail {
+  // Define properties for each fee detail if known
+  [key: string]: any // Placeholder for unknown structure
 }
 
 export interface InsertOnvoPaymentIntentI
