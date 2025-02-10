@@ -1,5 +1,11 @@
 # onvo-client
 
+## 0.0.25
+
+### Patch Changes
+
+- fix payment-intent update fn data type to UpdateOnvoPaymentIntentI
+
 ## 0.0.24
 
 ### Patch Changes

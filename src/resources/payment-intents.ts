@@ -1,6 +1,7 @@
 import {
   OnvoPaymentIntentI,
   InsertOnvoPaymentIntentI,
+  UpdateOnvoPaymentIntentI,
 } from '../types/payment-intents'
 import { OnvoPaginationParams, PaginatedResponse } from '../types/pagination'
 import { buildUrl } from '../utils/url'
@@ -61,7 +62,7 @@ export class PaymentIntents extends ResourceBase {
 
   public async update(
     id: string,
-    data: InsertOnvoPaymentIntentI
+    data: UpdateOnvoPaymentIntentI
   ): Promise<OnvoPaymentIntentI> {
     const url = buildUrl(this.client.baseUrl, `/payment-intents/${id}`)
     return this.request<OnvoPaymentIntentI>(url, {
